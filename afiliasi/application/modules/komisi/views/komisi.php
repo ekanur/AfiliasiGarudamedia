@@ -24,7 +24,7 @@
 <div class="span10 offset1">
     <?php
     echo "<h4>TOTAL KOMISI ANDA Rp. ".$total_komisi."</h4>";
-          if ($total_komisi==0||($total_komisi>0 && $total_komisi<=199000)) {
+          if ($total_komisi==0) {
             echo "
             <strong>Anda belum bisa melakukan penarikan komisi</strong><br/>
                   <a href='' data-target='#TOSModal' role='button' class='btn btn-info' data-toggle='modal'>Kenapa ???</a>
@@ -130,7 +130,7 @@
     <ol start=1>
       <li>Pembeli telah melakukan konfirmasi pembayaran kepada pihak GarudaMedia</li>
       <li>Member GarudaMedia telah melakukan konfirmasi pembayaran Premium member kepada pihak GarudaMedia</li>
-      <li>Saldo Minimal yang tersisa adalah Rp. 100.000,00</li>
+      <!-- <li>Saldo Minimal yang tersisa adalah Rp. 100.000,00</li> -->
       <li>Saldo Penarikan komisi minimal adalah Rp. 100.000,00</li>
     </ol>
   </div>

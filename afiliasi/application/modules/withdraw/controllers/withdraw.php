@@ -21,7 +21,7 @@
 					$session=$this->session->all_userdata();
 					$data_komisi=array(
 									'total_komisi'=>$this->komisi_model->show_all_komisi($datalogin['userid']),
-									'available_komisi'=>$this->komisi_model->show_all_komisi($datalogin['userid'])-100000,
+									'available_komisi'=>$this->komisi_model->show_all_komisi($datalogin['userid']),
 									'bank'=>$this->pengaturan_model->get_rekening_by_id($this->session->userdata('userid'))
 								);
 
@@ -55,8 +55,9 @@
 
 			}
 
-			if ($total_penarikan>$available_komisi||$total_penarikan<100000) {
-				redirect('lebih_besar');
+			if ($total_penarikan>$available_komisi) {
+				echo "Error";
+				
 			}
 
 			$new_total_komisi=$this->komisi_model->show_all_komisi($this->session->userdata('userid'))-$total_penarikan;
@@ -64,7 +65,7 @@
 
 			$data_update_komisi=array(
 					'total_komisi'=>$new_total_komisi,
-					'isactive'=>(($new_total_komisi<=199000)?0:1)
+					'isactive'=>(($new_total_komisi=0)?0:1)
 				);
 
 			$update_komisi=$this->komisi_model->update_total_komisi($data_update_komisi, $this->session->userdata('userid'));

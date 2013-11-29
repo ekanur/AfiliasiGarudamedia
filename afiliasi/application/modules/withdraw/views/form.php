@@ -6,7 +6,7 @@
 	<li>Proses transfer adalah 2-4 hari dari proses penarikan</li>
 </ol>
 <?php
-if ($total_komisi<=199000) {
+if ($total_komisi==0) {
 	?>
 <h3>Total Komisi anda : Rp. <?php echo $total_komisi; ?></h3>
 <strong>Maaf, Komisi anda belum mencukupi untuk proses transfer</strong>
@@ -34,6 +34,7 @@ else
 							<div class="input-prepend">
 							  <span class="add-on">Rp.</span>
 							  <input  id="prependedInput" name="total_penarikan" type="text">
+							  <!-- cek input minimal 100rb, pake jquery -->
 							</div>
 						</div>
 					</div>
