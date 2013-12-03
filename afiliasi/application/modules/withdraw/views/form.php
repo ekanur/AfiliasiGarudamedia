@@ -1,7 +1,7 @@
 <strong>Ketentuan Penarikan Komisi :</strong>
 <ol start=1 style="font-style:italic">
 	<li>Penarikan Komisi minimal adalah sebesar Rp. 100.000,</li>
-	<li>Sisa Saldo minimal adalah Rp. 100.000</li>
+	
 	<li>Proses transfer akan dikirim ke Rekening yang anda daftarkan</li>
 	<li>Proses transfer adalah 2-4 hari dari proses penarikan</li>
 </ol>
@@ -78,7 +78,7 @@ else
 <script type="text/javascript">
 	$('button.transfer').attr('disabled', true);
 $('#prependedInput').on('keyup',function() {
-    if(Number($(this).val()) <= <?php echo $available_komisi; ?> && ($(this).val().length)!=0) {
+    if(Number($(this).val()) <= <?php echo $available_komisi; ?> && Number($(this).val()) >=100000 && ($(this).val().length)!=0) {
         $('button.transfer').attr('disabled' , false);
     }else{
         $('button.transfer').attr('disabled' , true);

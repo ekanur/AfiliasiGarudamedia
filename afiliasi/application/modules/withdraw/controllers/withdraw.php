@@ -85,7 +85,8 @@
 			$new_withdraw=$this->withdraw_model->insert_new_withdraw($data_withdraw);
 
 			if ($new_withdraw==null) {
-				redirect('new_withdraw');
+				// redirect('new_withdraw');
+				echo "Error";
 			}
 			
 			redirect('komisi#info');
