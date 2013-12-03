@@ -51,7 +51,7 @@ else
           
           </fieldset>
           	<div class="control-group">
-					<button class="btn btn-success" style="margin-top:10px" name="transfer">Transfer</button>
+					<button class="transfer btn btn-success" style="margin-top:10px" name="transfer">Transfer</button>
 			</div>
 
 
@@ -59,6 +59,8 @@ else
       </div>
       </div>
 </form>
+
+
 <!-- eof modul -->
 
             <?php
@@ -73,3 +75,14 @@ else
 	}
 
 	?>
+<script type="text/javascript">
+	$('button.transfer').attr('disabled', true);
+$('#prependedInput').on('keyup',function() {
+    if(Number($(this).val()) <= <?php echo $available_komisi; ?> && ($(this).val().length)!=0) {
+        $('button.transfer').attr('disabled' , false);
+    }else{
+        $('button.transfer').attr('disabled' , true);
+    }
+});
+ 
+</script>
